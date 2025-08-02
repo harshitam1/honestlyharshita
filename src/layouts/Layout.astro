@@ -1,0 +1,30 @@
+---
+import Navigation from '../components/Navigation.astro';
+import '../styles/global.css';
+
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "A personal blog by Harshita" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content={description} />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <title>{title}</title>
+</head>
+<body>
+  <div class="min-h-screen bg-cream-50 bg-paper relative">
+    <Navigation />
+    <main class="relative z-10">
+      <slot />
+    </main>
+  </div>
+</body>
+</html>

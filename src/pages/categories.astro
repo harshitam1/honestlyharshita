@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { categories } from '../data/blogData';
+---
+
+<Layout title="Categories - honestly, harshita" description="Explore blog posts by category">
+  <section class="min-h-screen py-20 bg-cream-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h1 class="font-serif text-4xl md:text-6xl font-bold text-navy-800 mb-6">
+          Categories
+        </h1>
+        <p class="text-xl text-navy-700 font-body">
+          explore posts by topic
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        {categories.map((category) => (
+          <div class="bg-white p-6 rounded-lg shadow-md hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+            <h2 class="font-serif text-2xl font-bold text-navy-800 mb-3 capitalize">
+              {category.name}
+            </h2>
+            <p class="text-navy-700 font-mono text-sm mb-4">
+              {category.count} {category.count === 1 ? 'post' : 'posts'}
+            </p>
+            <a 
+              href="/journal" 
+              class="inline-flex items-center text-navy-800 font-mono font-medium hover:text-navy-900 transition-colors"
+            >
+              View posts
+              <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

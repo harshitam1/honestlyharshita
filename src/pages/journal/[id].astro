@@ -1,0 +1,124 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { blogPosts } from '../../data/blogData';
+
+export async function getStaticPaths() {
+  return blogPosts.map((post) => {
+    return {
+      params: { id: post.id },
+      props: { post },
+    };
+  });
+}
+
+const { post } = Astro.props;
+---
+
+<Layout title={`${post.title} - honestly, harshita`} description={post.excerpt}>
+  <article class="min-h-screen py-20 bg-cream-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Back to Journal -->
+      <div class="mb-8">
+        <a 
+          href="/journal" 
+          class="inline-flex items-center text-navy-700 hover:text-navy-800 font-mono transition-colors"
+        >
+          <svg class="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          </svg>
+          Back to Journal
+        </a>
+      </div>
+
+      <!-- Article Header -->
+      <header class="mb-12 text-center">
+        {post.pinned && (
+          <div class="flex items-center justify-center gap-2 mb-4">
+            <svg class="w-5 h-5 text-cream-600" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M16 12V4a1 1 0 00-1-1H9a1 1 0 00-1 1v8H6l3 3 3-3h-2z"/>
+              <path d="M9 16v4a1 1 0 001 1h4a1 1 0 001-1v-4H9z"/>
+            </svg>
+            <span class="text-sm font-mono text-cream-600 uppercase tracking-wide">Pinned Post</span>
+          </div>
+        )}
+        
+        <h1 class="font-serif text-4xl md:text-6xl font-bold text-navy-800 mb-6 leading-tight">
+          {post.title}
+        </h1>
+        
+        <div class="flex items-center justify-center gap-4 text-navy-700 font-mono text-sm mb-8">
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+            <span>{new Date(post.date).toLocaleDateString('en-US', {
+              month: 'long',
+              day: 'numeric',
+              year: 'numeric'
+            })}</span>
+          </div>
+          <span>•</span>
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <span>{post.readTime} min read</span>
+          </div>
+        </div>
+        
+        <div class="flex flex-wrap gap-2 justify-center">
+          {post.categories.map((category) => (
+            <span class="px-3 py-2 bg-sage-100 text-navy-700 text-sm rounded-lg font-mono border border-sage-200">
+              {category}
+            </span>
+          ))}
+        </div>
+      </header>
+
+      <!-- Article Content -->
+      <div class="prose prose-lg max-w-none">
+        <div class="font-body text-navy-800 leading-relaxed text-lg space-y-6">
+          {post.content.split('\n\n').map((paragraph) => {
+            if (paragraph.startsWith('**') && paragraph.endsWith('**')) {
+              return (
+                <h3 class="font-serif text-2xl font-bold text-navy-800 mt-8 mb-4">
+                  {paragraph.slice(2, -2)}
+                </h3>
+              );
+            }
+            return (
+              <p class="mb-6">
+                {paragraph}
+              </p>
+            );
+          })}
+        </div>
+      </div>
+
+      <!-- Navigation to other posts -->
+      <div class="mt-16 pt-8 border-t border-sage-200">
+        <div class="flex justify-between items-center">
+          <a 
+            href="/journal" 
+            class="inline-flex items-center px-6 py-3 bg-sage-100 text-navy-800 font-mono font-medium rounded-lg hover:bg-sage-200 transition-colors"
+          >
+            <svg class="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+            All Posts
+          </a>
+          
+          <a 
+            href="/" 
+            class="inline-flex items-center px-6 py-3 bg-navy-800 text-cream-50 font-mono font-medium rounded-lg hover:bg-navy-900 transition-colors"
+          >
+            Home
+            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </article>
+</Layout>

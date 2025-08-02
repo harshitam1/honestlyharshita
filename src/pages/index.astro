@@ -1,16 +1,114 @@
 ---
+import Layout from '../layouts/Layout.astro';
+import { blogPosts } from '../data/blogData';
 
+const latestPosts = blogPosts.slice(0, 3);
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="honestly, harshita - Personal Blog" description="Welcome to my corner of the internet where I share thoughts, stories, and my journey of figuring life out">
+  <!-- Hero Section -->
+  <section class="min-h-screen py-20 relative overflow-hidden flex items-center justify-center bg-cream-100 bg-paper">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="animate-fade-in">
+        <h1 class="font-serif text-5xl md:text-7xl font-bold mb-6 text-navy-800">
+          honestly, harshita
+        </h1>
+        
+        <p class="text-xl md:text-2xl font-body text-navy-800 leading-relaxed mb-12 max-w-3xl mx-auto">
+          welcome to my corner of the internet where i share thoughts, stories, and my journey of figuring life out as a young girl in a big world
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-6 justify-center">
+          <a 
+            href="/journal" 
+            class="inline-flex items-center px-6 py-3 bg-navy-800 text-cream-50 font-mono font-medium text-base rounded-xl hover:bg-navy-900 transition-all duration-300 shadow-md hover:-translate-y-1"
+          >
+            Start Reading
+            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+          <a 
+            href="/about" 
+            class="inline-flex items-center px-6 py-3 bg-cream-300 text-navy-800 font-mono font-medium text-base rounded-xl hover:bg-cream-400 transition-all duration-300 shadow-md hover:-translate-y-1"
+          >
+            Get to Know Me
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest Posts Section -->
+  <section class="py-20 relative bg-cream-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="font-serif text-4xl md:text-5xl font-bold text-navy-800 mb-4">
+          Latest Thoughts
+        </h2>
+        <p class="text-lg text-navy-800 font-body">fresh from my journal</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {latestPosts.map((post, index) => (
+          <article 
+            class="bg-white p-6 rounded-lg shadow-md animate-fade-in hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+            style={`animation-delay: ${index * 0.2}s`}
+          >
+            <div class="flex items-center gap-2 text-sm text-navy-800 mb-4 font-sans">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17v4a2 2 0 002 2h4M11 7.343V10a1 1 0 001 1h2.657"></path>
+              </svg>
+              <span>{post.readTime} min read</span>
+              <span>•</span>
+              <span>{new Date(post.date).toLocaleDateString('en-US', {
+                month: 'short',
+                day: 'numeric'
+              })}</span>
+            </div>
+            
+            <h3 class="font-serif text-2xl font-bold text-navy-800 mb-4 leading-tight">
+              {post.title}
+            </h3>
+            
+            <p class="text-navy-700 mb-6 leading-relaxed font-body">
+              {post.excerpt}
+            </p>
+            
+            <div class="flex flex-wrap gap-2 mb-6">
+              {post.categories.slice(0, 2).map((category) => (
+                <span 
+                  class="px-3 py-1 bg-sage-100 text-navy-700 text-sm rounded-lg font-mono border border-sage-200"
+                >
+                  {category}
+                </span>
+              ))}
+            </div>
+            
+            <a 
+              href={`/journal/${post.id}`}
+              class="inline-flex items-center text-navy-800 font-mono font-medium hover:text-navy-900 transition-all duration-300"
+            >
+              Read more
+              <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </article>
+        ))}
+      </div>
+
+      <div class="text-center mt-16">
+        <a 
+          href="/journal" 
+          class="inline-flex items-center px-6 py-3 text-navy-800 font-mono font-medium hover:text-navy-900 transition-colors bg-sage-100 rounded-lg hover:bg-sage-200"
+        >
+          View All Posts
+          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
