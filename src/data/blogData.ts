@@ -4,7 +4,7 @@ import { BlogPost, Category } from '../types/blog';
 export const blogPosts: BlogPost[] = [
   {
     id: '7',
-    title: 'five week of hell',
+    title: 'five weeks of hell',
     content: `For five weeks, my world shrank to the size of a classroom at West Coast EMT. Class at 7:45, home at 6:00, study, sleep. Rinse, repeat. It was the most challenging five weeks of my life, and if I'm being honest, I spent most of it complaining. I complained about the long hours, the endless memorization of anatomy and drug dosages, the way my brain felt like mush by the end of each day. I missed my slow mornings, my free time, my friends. I missed being able to breathe without a deadline hanging over my head.
 
 What I failed to realize in those moments of exhaustion and frustration was that there was something meaningful unfolding. I was committing to something difficult, and seeing it through. I was showing up not just that day's quiz or skill, but for my future. I was taking the first step in my career and the life I want to live. 
@@ -20,7 +20,7 @@ It seems all phases of life work this way. The job you think will last forever, 
 It's terrifying. And beautiful. Nothing, no matter how meaningful, is gauranteed to last. At the same time, impermanence is what gives weight to our experiences. If those five weeks were going to last forever, would I have treasured them the same way? If I knew I'd see my classmates every day for the next decade, would our lunch conversations carry the same weight? The ticking clock makes everything more vivid, more urgent, more real. It forced me to pay attention.
 
 Now, onto the next chapter.`,
-    excerpt: "What EMT school taught me, besides Basic Life Support",
+    excerpt: "What EMT school taught me, besides Basic Life Support.",
     date: '2025-08-02',
     categories: ['life lessons', 'thoughts'],
     readTime: 4
