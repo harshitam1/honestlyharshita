@@ -15,34 +15,36 @@ import { blogPosts, categories } from '../../data/blogData';
         </p>
       </div>
 
-      <!-- Categories with Descriptions -->
-      <div class="mb-16 space-y-6">
-        <div class="flex flex-wrap gap-3 justify-center">
-          <button class="category-btn px-6 py-3 bg-navy-800 text-cream-50 font-mono font-medium rounded-lg hover:bg-navy-900 transition-colors" data-category="all">
-            All Posts
-          </button>
+      <!-- Categories -->
+      <div class="mb-16">
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-8">
           {categories.map((category) => (
             <button
-              class={`category-btn px-6 py-3 ${category.color} font-mono font-medium rounded-lg hover:opacity-80 transition-all`}
+              class={`category-card text-left p-6 rounded-2xl ${category.color} transition-all hover:shadow-md hover:-translate-y-1 cursor-pointer border-2`}
               data-category={category.name}
             >
-              {category.name} ({category.count})
+              <div class="flex items-center justify-between mb-3">
+                <h3 class="font-serif text-xl font-bold">
+                  {category.name}
+                </h3>
+                <span class="text-sm font-mono opacity-70">
+                  {category.count}
+                </span>
+              </div>
+              <p class="text-sm font-body leading-relaxed opacity-90">
+                {category.description}
+              </p>
             </button>
           ))}
         </div>
 
-        <!-- Category Descriptions - Always Visible -->
-        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {categories.map((category) => (
-            <div class="bg-white p-5 rounded-xl shadow-sm border border-sage-100">
-              <h3 class={`font-mono font-semibold mb-2 ${category.color.split(' ')[1]}`}>
-                {category.name}
-              </h3>
-              <p class="text-sm text-navy-600 font-body leading-relaxed">
-                {category.description}
-              </p>
-            </div>
-          ))}
+        <div class="text-center">
+          <button
+            class="category-card px-8 py-3 bg-navy-800 text-cream-50 font-mono font-medium rounded-xl hover:bg-navy-900 transition-all hover:shadow-md"
+            data-category="all"
+          >
+            View All Posts
+          </button>
         </div>
       </div>
 
@@ -120,19 +122,26 @@ import { blogPosts, categories } from '../../data/blogData';
 </Layout>
 
 <script>
-  const categoryBtns = document.querySelectorAll('.category-btn');
+  const categoryCards = document.querySelectorAll('.category-card');
   const postCards = document.querySelectorAll<HTMLElement>('.post-card');
 
-  categoryBtns.forEach(btn => {
+  categoryCards.forEach(btn => {
     btn.addEventListener('click', () => {
       const category = btn.getAttribute('data-category');
       if (!category) return;
 
-      // Update active button
-      categoryBtns.forEach(b => {
-        b.classList.remove('ring-2', 'ring-navy-800', 'ring-offset-2');
+      // Update active state
+      categoryCards.forEach(b => {
+        if (b.getAttribute('data-category') === 'all') {
+          // Keep "View All Posts" button styled consistently
+          return;
+        }
+        b.classList.remove('ring-4', 'ring-navy-800', 'ring-offset-2');
       });
-      btn.classList.add('ring-2', 'ring-navy-800', 'ring-offset-2');
+
+      if (category !== 'all') {
+        btn.classList.add('ring-4', 'ring-navy-800', 'ring-offset-2');
+      }
 
       // Filter posts
       postCards.forEach(card => {

@@ -48,17 +48,17 @@ const baseCategories: Omit<Category, 'count'>[] = [
   {
     name: 'Health + Science',
     description: 'Volunteering, patient care, research, and reflections on my journey through healthcare and biology',
-    color: 'bg-sky-100 text-sky-700 border-sky-200'
+    color: 'bg-blue-50 text-blue-900 border-blue-200'
   },
   {
     name: 'Personal',
     description: 'Life reflections, personal growth, and navigating the messy process of figuring it all out',
-    color: 'bg-rose-100 text-rose-700 border-rose-200'
+    color: 'bg-purple-50 text-purple-900 border-purple-200'
   },
   {
     name: "Things I'm Learning",
     description: 'Current projects and skills — from EMT training to coding this website and everything in between',
-    color: 'bg-emerald-100 text-emerald-700 border-emerald-200'
+    color: 'bg-amber-50 text-amber-900 border-amber-200'
   }
 ];
 
