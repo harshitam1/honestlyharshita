@@ -1,8 +1,6 @@
-import { BlogPost, Category } from '../types/blog';
+import type { BlogPost, Category } from '../types/blog';
 
-export const blogPosts: BlogPost[] = [
-  // Your blog posts will go here
-];
+export const blogPosts: BlogPost[] = [];
 
 // Sort posts: pinned first, then by date (newest first)
 blogPosts.sort((a, b) => {
