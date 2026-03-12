@@ -12,6 +12,7 @@ export interface BlogPost {
 
 export interface Category {
   name: string;
+  description: string;
   color: string;
   count: number;
 }

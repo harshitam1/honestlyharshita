@@ -14,11 +14,21 @@ blogPosts.sort((a, b) => {
 
 // Define base categories without counts
 const baseCategories: Omit<Category, 'count'>[] = [
-  { name: 'personal', color: 'bg-coral-100 text-coral-800' },
-  { name: 'thoughts', color: 'bg-blue-100 text-blue-800' },
-  { name: 'life lessons', color: 'bg-green-100 text-green-800' },
-  { name: 'confidence', color: 'bg-pink-100 text-pink-800' },
-  { name: 'self-reflection', color: 'bg-yellow-100 text-yellow-800' }
+  {
+    name: 'Health + Science',
+    description: 'Volunteering, patient care, research, and reflections on my journey through healthcare and biology',
+    color: 'bg-blue-100 text-blue-800'
+  },
+  {
+    name: 'Personal',
+    description: 'Life reflections, personal growth, and navigating the messy process of figuring it all out',
+    color: 'bg-pink-100 text-pink-800'
+  },
+  {
+    name: "Things I'm Learning",
+    description: 'Current projects and skills — from EMT training to coding this website and everything in between',
+    color: 'bg-green-100 text-green-800'
+  }
 ];
 
 // Function to calculate counts and create the final categories array
