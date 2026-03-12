@@ -3,7 +3,7 @@ import type { BlogPost, Category } from '../types/blog';
 export const blogPosts: BlogPost[] = [
   {
     id: '7',
-    title: 'five weeks of hell',
+    title: 'the hardest five weeks of my life',
     content: `For five weeks, my world shrank to the size of a classroom at West Coast EMT. Class at 7:45, home at 6:00, study, sleep. Rinse, repeat. It was the most challenging five weeks of my life, and if I'm being honest, I spent most of it complaining. I complained about my body aching from constantly sitting. I complained about my brain feeling like mush from the ten hour days filled with lectures, tests, and skills. I missed my slow mornings, my free time, my friends. I missed being able to breathe without a deadline hanging over my head. It was so easy to get lost in the hard moments as we scarfed down our lunch just so we'd have enough time to cram for our next quiz.
 
 What I failed to realize in those moments of exhaustion and frustration was that I was beginning something bigger than EMT school. I was taking the first step towards my dream career and committing to my future. I learned far more than just medical procedures and BLS. I learned what it means to show up for people at their most vulnerable moments. I learned what sacrifice looks like. I learned how to keep going when every part of me wanted to quit. I was proving to myself that I was capable of more than I imagined.
@@ -29,8 +29,7 @@ Now, it's time for the next chapter in my story.`,
     excerpt: "Here's why I finally decided to start sharing my thoughts.",
     date: '2025-06-04',
     categories: ['Personal'],
-    readTime: 4,
-    pinned: true
+    readTime: 4
   }
 ];
 
@@ -49,17 +48,17 @@ const baseCategories: Omit<Category, 'count'>[] = [
   {
     name: 'Health + Science',
     description: 'Volunteering, patient care, research, and reflections on my journey through healthcare and biology',
-    color: 'bg-blue-100 text-blue-800'
+    color: 'bg-sky-100 text-sky-700 border-sky-200'
   },
   {
     name: 'Personal',
     description: 'Life reflections, personal growth, and navigating the messy process of figuring it all out',
-    color: 'bg-pink-100 text-pink-800'
+    color: 'bg-rose-100 text-rose-700 border-rose-200'
   },
   {
     name: "Things I'm Learning",
     description: 'Current projects and skills — from EMT training to coding this website and everything in between',
-    color: 'bg-green-100 text-green-800'
+    color: 'bg-emerald-100 text-emerald-700 border-emerald-200'
   }
 ];
 

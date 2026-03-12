@@ -16,7 +16,7 @@ import { blogPosts, categories } from '../../data/blogData';
       </div>
 
       <!-- Categories with Descriptions -->
-      <div class="mb-16 space-y-4">
+      <div class="mb-16 space-y-6">
         <div class="flex flex-wrap gap-3 justify-center">
           <button class="category-btn px-6 py-3 bg-navy-800 text-cream-50 font-mono font-medium rounded-lg hover:bg-navy-900 transition-colors" data-category="all">
             All Posts
@@ -31,9 +31,18 @@ import { blogPosts, categories } from '../../data/blogData';
           ))}
         </div>
 
-        <!-- Category Descriptions -->
-        <div id="category-description" class="text-center max-w-2xl mx-auto">
-          <p class="text-navy-700 font-body italic"></p>
+        <!-- Category Descriptions - Always Visible -->
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {categories.map((category) => (
+            <div class="bg-white p-5 rounded-xl shadow-sm border border-sage-100">
+              <h3 class={`font-mono font-semibold mb-2 ${category.color.split(' ')[1]}`}>
+                {category.name}
+              </h3>
+              <p class="text-sm text-navy-600 font-body leading-relaxed">
+                {category.description}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
 
@@ -111,15 +120,8 @@ import { blogPosts, categories } from '../../data/blogData';
 </Layout>
 
 <script>
-  const categoryDescriptions: Record<string, string> = {
-    'Health + Science': 'Volunteering, patient care, research, and reflections on my journey through healthcare and biology',
-    'Personal': 'Life reflections, personal growth, and navigating the messy process of figuring it all out',
-    "Things I'm Learning": 'Current projects and skills — from EMT training to coding this website and everything in between'
-  };
-
   const categoryBtns = document.querySelectorAll('.category-btn');
   const postCards = document.querySelectorAll<HTMLElement>('.post-card');
-  const descriptionEl = document.querySelector<HTMLParagraphElement>('#category-description p');
 
   categoryBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -131,15 +133,6 @@ import { blogPosts, categories } from '../../data/blogData';
         b.classList.remove('ring-2', 'ring-navy-800', 'ring-offset-2');
       });
       btn.classList.add('ring-2', 'ring-navy-800', 'ring-offset-2');
-
-      // Update description
-      if (descriptionEl) {
-        if (category === 'all') {
-          descriptionEl.textContent = '';
-        } else {
-          descriptionEl.textContent = categoryDescriptions[category] || '';
-        }
-      }
 
       // Filter posts
       postCards.forEach(card => {
