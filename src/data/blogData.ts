@@ -2,6 +2,53 @@ import type { BlogPost, Category } from '../types/blog';
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '8',
+    title: 'things i learned vibe coding',
+    content: `I built this website in 4 days with an AI tool called Claude Code and it turns out I don't mind coding when my vibe is good and I have a co-pilot who actually knows what they're doing. AI really might change the whole "learn to code or else" mentality in science.
+
+Traditional coding is taught with an assumption that you'll start from scratch. Hours on syntax. Days debugging typos. Weeks trying to piece together someone else's confusing Stack Overflow post. I've done some coding. I've written a couple programs in highschool and scraped together a few messy projects in my dorm room. Every time I start learning a new language or picking up a new framework my attention span slips as I juggle coursework and patient care and just… other things I'd rather be doing.
+
+So when I wanted to build a personal website, I braced myself for weeks of referencing docs and watching endless Youtube tutorials. Instead, I leaned on an AI tool. Not because I didn't want to learn. But because I did, just differently.
+
+Instead of fighting with syntax or banging my head against weird errors, I spent my time actually understanding how websites work. How components connect. How styling flows through a page. I learned by doing, watching Claude write code for me and tweaking it to fit what I wanted. When something broke, Claude explained what went wrong. When I wanted to change a color or add a feature, I'd describe it in plain language and watch the code change live. It felt like a conversation, not a cryptic puzzle.
+
+Here's what I actually learned while "vibe coding":
+
+1. **How Astro works.** I built this site with Astro, a framework I'd never touched before. By the end, I understood static site generation, components, and routing. Not from reading docs. From using it.
+
+2. **How Tailwind CSS works.** I didn't memorize classes. But I learned how utility styles let you iterate fast and keep things consistent.
+
+3. **File structure and architecture.** I understood where things live, how pages connect, and why clean structure actually matters.
+
+4. **The real problem solving.** Syntax is just language. The hard part is actually knowing what you want, breaking it into steps, and recognizing when something feels off.
+
+To me, that's the point. AI didn't replace learning. It accelerated it. Instead of spending hours stuck on a semicolon, I spent them understanding concepts. Debugging became explaining my intent and catching my own assumptions. Coding felt less like gatekeeping and more like building.
+
+This matters for people like me. Bio students who want to automate data analysis but don't have a semester to dedicate to learning R. Pre-meds who want a portfolio site but can't justify weeks learning web dev. Researchers who need to visualize results but are drowning in actual science. AI makes these things accessible. Not effortless, but possible.
+
+I still care about understanding what I'm doing. I read the code Claude writes. I ask why things work the way they do. I tweak and experiment. But I'm doing it in context, with a project I care about, not grinding through abstract exercises hoping they'll someday click. That's what made it stick.
+
+If you want to try this, here's my advice:
+
+- **Pick a real project.** Don't build a practice app. Build something you actually want. A blog. A resume site. A tool for organizing your research notes. Real stakes make you care about understanding.
+
+- **Use Claude Code or something similar.** I used Claude Code because it integrates with my editor and GitHub. It let me chat with the AI while writing code in real time. Pick whatever tool feels natural.
+
+- **Ask questions constantly.** Don't just copy-paste. Ask "why did you do it this way?" or "what does this line do?" Treat the AI like a teaching assistant.
+
+- **Break things on purpose.** Change something. See what breaks. That's how you learn what actually matters.
+
+- **Push to production.** Deploy your project. Let it exist in the world. There's something about seeing your work live that makes you care about getting it right.
+
+I'm not saying everyone needs to code. But if you've been curious and held back by the learning curve, AI might be your in. Not a shortcut, just a different path. One that lets you build while you learn instead of waiting until you're "ready."
+
+This website is live. You're reading it right now. Four days ago, I had an idea and a vague memory of HTML tags. Now I have a working site I actually understand. That's what vibe coding gave me. The confidence to start, the support to keep going, and the space to learn on my own terms.`,
+    excerpt: "How I built this website from scratch using AI, and what vibe coding taught me about learning by doing.",
+    date: '2025-03-15',
+    categories: ["Things I'm Learning"],
+    readTime: 6
+  },
+  {
     id: '7',
     title: 'the hardest five weeks of my life',
     content: `For five weeks, my world shrank to the size of a classroom at West Coast EMT. Class at 7:45, home at 6:00, study, sleep. Rinse, repeat. It was the most challenging five weeks of my life, and if I'm being honest, I spent most of it complaining. I complained about my body aching from constantly sitting. I complained about my brain feeling like mush from the ten hour days filled with lectures, tests, and skills. I missed my slow mornings, my free time, my friends. I missed being able to breathe without a deadline hanging over my head. It was so easy to get lost in the hard moments as we scarfed down our lunch just so we'd have enough time to cram for our next quiz.
