@@ -2,6 +2,37 @@ import type { BlogPost, Category } from '../types/blog';
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '9',
+    title: '10 days, 19000 pairs of eyes',
+    content: `A month ago, I found myself on a plane to Uganda.
+
+I had been invited by Dr. Nitin Shah to join his team on a medical volunteer trip to Kampala. I knew the outline of what we would do. Vision screenings. Basic health checks. Travel to schools. Ten days.
+
+What I didn't know was how much those ten days would stay with me.
+
+Every morning we loaded vans with boxes of equipment and drove to a new school somewhere across the country. Sometimes the classrooms were packed. Sometimes we set up outside in courtyards. Desks turned into exam stations. Eye charts taped to walls. Lines of kids forming before we were even ready. Most of them had never had their vision tested before.
+
+The process was simple. One by one they sat down in front of the chart and tried to read the letters. Some leaned forward. Some squinted. Some guessed. But the moment I will never forget came when we found the right pair of glasses.
+
+We would hand them a pair of glasses and watch their face change in real time. They'd blink. Look around the room. Turn their head toward something far away. Sometimes they laughed. Sometimes they just went quiet, taking everything in. You could almost see the moment the world sharpened.
+
+By the end of the trip, we had screened more than 19,000 children and provided glasses to the ones who needed them. Nineteen thousand chances for a child to see the board in class, read a book more easily, recognize a face from across a room. It sounds simple. But when you watch it happen, you realize how big that moment is.
+
+In between vision screenings, we also conducted hemoglobin and blood pressure checks for young girls. These were quick interactions, but important ones. For many of them, it was the first time anyone had checked.
+
+The days were long. We were constantly moving between schools, unloading equipment, setting up again, repeating the process. At night we stayed in small hotels, exhausted but full of stories from the day. Then we woke up and did it again.
+
+Ten days isn't very long. But something about being there stayed with me. It made healthcare feel different. Less abstract. Less like something confined to hospitals or textbooks. More like something immediate and human. A pair of glasses placed gently on a child's face. A quick health check that might catch something early. A moment where someone realizes the world can look clearer than it did before.
+
+I went to Uganda thinking I would help but I left realizing how much I had learned instead because sometimes the most powerful thing you can do in medicine is surprisingly small.
+
+I helped someone see. And in the process, I started seeing the world a little differently too.`,
+    excerpt: "What I learned from screening 19,000 children and watching the world come into focus, one pair of glasses at a time.",
+    date: '2025-02-10',
+    categories: ['Health + Science'],
+    readTime: 5
+  },
+  {
     id: '8',
     title: 'things i learned vibe coding',
     content: `I built this website in 4 days with an AI tool called Claude Code and it turns out I don't mind coding when my vibe is good and I have a co-pilot who actually knows what they're doing. AI really might change the whole "learn to code or else" mentality in science.
