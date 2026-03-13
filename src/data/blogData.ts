@@ -2,6 +2,45 @@ import type { BlogPost, Category } from '../types/blog';
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '10',
+    title: 'behind every dataset is a person',
+    content: `One thing I've noticed while volunteering in community health spaces is that the people who need care the most are often the least likely to seek it.
+
+I first saw this while volunteering at health clinics in community temples through SAAHAS. People would come in for blood pressure checks or basic screenings, but when conversations drifted toward things like mental health or chronic symptoms, there was hesitation. Sometimes it was a language barrier. Sometimes it was stigma. Sometimes it was just uncertainty about whether anyone would actually understand.
+
+These weren't abstract "public health barriers" like you read about in textbooks. They were real people sitting across from me, trying to decide how much of their story they felt safe sharing. That experience left me with a question I haven't been able to stop thinking about: How much of a person's health is shaped not just by biology, but by the environment they grow up in?
+
+A lot of research already tells us that environment matters. Things like nutrition, chronic stress, pollution, access to healthcare, and financial stability all influence health outcomes.
+
+Through SAAHAS, I worked on research focused on South Asian mental health, which is a topic that's still deeply under-discussed in many of our communities. Presenting that work at the South Asian Mental Health Consortium made me realize how powerful even small pieces of research can be when they address questions that actually matter to people.
+
+Another moment that stuck with me was traveling to Uganda with Dr. Nitin Shah's optometry team. Over ten days, we screened more than 19,000 students across rural schools and helped provide glasses to kids who needed them.
+
+For many of them, it was the first vision screening they had ever received. The connection between environment and health stopped feeling theoretical at that point. It looked like a child squinting at the blackboard because no one had ever checked their eyesight before.
+
+I saw something similar volunteering at PIH Downey. Hospitals are incredible places, but they can also feel incredibly difficult to navigate if you don't have the right resources — time, insurance, transportation, or fluency in English.
+
+Access to healthcare isn't just about hospitals existing. It's about whether people can realistically use them. Now that I'm studying biology at UC Riverside, I'm interested in understanding health from multiple angles at once.
+
+What fascinates me is how those levels interact.
+
+How do early biological conditions shape what happens decades later?
+
+How do community-level experiences get "under the skin" and affect development?
+
+And if we understand those connections better, what can we actually do about them?
+
+I'm learning the science piece step by step.
+
+But I also think the people studying these questions should include people who have seen healthcare outside of controlled research settings. People who've sat in community clinics, listened to patients hesitate to describe symptoms, and watched how social barriers show up in everyday medical care. Because behind every dataset is a real person, and behind every health statistic is a story that usually started long before a diagnosis.
+
+The more perspectives we bring to understanding healthcare, the better our chances of actually improving it.`,
+    excerpt: "Why the people studying healthcare should include those who've seen it from the ground up, where social barriers meet medical care.",
+    date: '2026-01-11',
+    categories: ['Health + Science'],
+    readTime: 6
+  },
+  {
     id: '9',
     title: '10 days, 19000 pairs of eyes',
     content: `A month ago, I found myself on a plane to Uganda.
@@ -28,7 +67,7 @@ I went to Uganda thinking I would help but I left realizing how much I had learn
 
 I helped someone see. And in the process, I started seeing the world a little differently too.`,
     excerpt: "What I learned from screening 19,000 children and watching the world come into focus, one pair of glasses at a time.",
-    date: '2025-02-10',
+    date: '2025-07-28',
     categories: ['Health + Science'],
     readTime: 5
   },
