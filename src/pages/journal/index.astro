@@ -16,35 +16,17 @@ import { blogPosts, categories } from '../../data/blogData';
       </div>
 
       <!-- Categories -->
-      <div class="mb-16">
-        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-8">
+      <div class="mb-10">
+        <div class="flex flex-wrap gap-3 justify-center">
           {categories.map((category) => (
             <button
-              class={`category-card text-left p-6 rounded-2xl ${category.color} transition-all hover:shadow-md hover:-translate-y-1 cursor-pointer border-2`}
+              class={`category-card px-4 py-2 rounded-xl ${category.color} transition-all hover:shadow-md hover:-translate-y-0.5 cursor-pointer border-2 font-mono text-sm font-medium`}
               data-category={category.name}
             >
-              <div class="flex items-center justify-between mb-3">
-                <h3 class="font-serif text-xl font-bold">
-                  {category.name}
-                </h3>
-                <span class="text-sm font-mono opacity-70">
-                  {category.count}
-                </span>
-              </div>
-              <p class="text-sm font-body leading-relaxed opacity-90">
-                {category.description}
-              </p>
+              {category.name}
+              <span class="ml-1 opacity-60">({category.count})</span>
             </button>
           ))}
-        </div>
-
-        <div class="text-center">
-          <button
-            class="category-card px-8 py-3 bg-navy-800 text-cream-50 font-mono font-medium rounded-xl hover:bg-navy-900 transition-all hover:shadow-md"
-            data-category="all"
-          >
-            View All Posts
-          </button>
         </div>
       </div>
 
@@ -124,36 +106,33 @@ import { blogPosts, categories } from '../../data/blogData';
 <script>
   const categoryCards = document.querySelectorAll('.category-card');
   const postCards = document.querySelectorAll<HTMLElement>('.post-card');
+  let activeCategory: string | null = null;
 
   categoryCards.forEach(btn => {
     btn.addEventListener('click', () => {
       const category = btn.getAttribute('data-category');
       if (!category) return;
 
-      // Update active state
-      categoryCards.forEach(b => {
-        if (b.getAttribute('data-category') === 'all') {
-          // Keep "View All Posts" button styled consistently
-          return;
-        }
-        b.classList.remove('ring-4', 'ring-navy-800', 'ring-offset-2');
-      });
-
-      if (category !== 'all') {
-        btn.classList.add('ring-4', 'ring-navy-800', 'ring-offset-2');
+      // Toggle: if clicking the active category, deselect and show all
+      if (activeCategory === category) {
+        activeCategory = null;
+        categoryCards.forEach(b => b.classList.remove('ring-4', 'ring-navy-800', 'ring-offset-2'));
+        postCards.forEach(card => card.style.display = 'block');
+        return;
       }
+
+      activeCategory = category;
+
+      // Update active state
+      categoryCards.forEach(b => b.classList.remove('ring-4', 'ring-navy-800', 'ring-offset-2'));
+      btn.classList.add('ring-4', 'ring-navy-800', 'ring-offset-2');
 
       // Filter posts
       postCards.forEach(card => {
         const categoriesAttr = card.getAttribute('data-categories');
         if (!categoriesAttr) return;
-
         const postCategories = JSON.parse(categoriesAttr);
-        if (category === 'all' || postCategories.includes(category)) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
+        card.style.display = postCategories.includes(category) ? 'block' : 'none';
       });
     });
   });
