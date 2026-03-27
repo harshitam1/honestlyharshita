@@ -2,6 +2,31 @@ import type { BlogPost, Category } from '../types/blog';
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '11',
+    title: 'in between',
+    excerpt: 'uncertainty is the art of being human',
+    date: '2026-03-27',
+    categories: ['Personal'],
+    readTime: 3,
+    content: `<p>I've done a lot of things. More than what exists on this website, more than what I can neatly explain. I'm not saying that to make myself sound impressive. I'm saying this because I need you to understand that I tried. I really, genuinely tried to become someone who had it all figured out. Someone who had all the answers. Someone who was real and consistent.</p>
+
+      <p>And for a while, I thought that was something you could earn. So with each new experience, I kept waiting for the feeling that I thought was supposed to arrive. The one that says "Okay. You're done. You have it all figured out."</p>
+
+      <p>It never came. So for a long time I kept doing more. Saying yes more. How to fill my time with things that felt meaningful, things that looked like progress. I told myself that if I just did enough — learned enough, pushed enough, exposed myself to enough — I would eventually land somewhere solid.</p>
+
+      <p>What nobody told me and what I least expected was the realization that doing more doesn't make you more certain. It only made me more aware of how much I didn't know. Every experience gave me something. I won't pretend they didn't. They mattered. They changed me in ways I can't fully articulate. Each one opened a door I didn't know existed, and behind every door was something bigger than what I had seen before. More complexity. More nuance. More than I even considered.</p>
+
+      <p>My world didn't get clearer. It got wider.</p>
+
+      <p>The only way to grow is to challenge yourself. And there is always a bigger fish to fry. So recently, I have learned to stop waiting for the click. Certainty isn't something you accumulate, or a place you arrive at and stay, because then you would never change. There is no other side. No version of me who has finished becoming myself.</p>
+
+      <p>Now, I do things differently. I have always done things with the intention of learning something new, but I always thought it would lead me to a concrete end goal. Instead, I know that everything I do is meaningful in itself. Because they scare me in a way that makes me know they matter. Because I'm curious and alive and I only get one life and I refuse to spend it waiting to feel ready.</p>
+
+      <p>I don't think I will ever know where any of this is going. There is freedom and grief in accepting that. I refuse to ever stop paying attention to being alive. Being awake in my own life means that I will be staying in the middle of the sentence, always.</p>
+
+      <p>For the meantime, I'm following what feels true and letting that be enough. For the first time, I think that is perfectly okay.</p>`
+  },
+  {
     id: '10',
     title: 'behind every dataset is a person',
     content: `One thing I've noticed while volunteering in community health spaces is that the people who need care the most are often the least likely to seek it.
