@@ -4,9 +4,9 @@ import { blogPosts, categories } from '../../data/blogData';
 ---
 
 <Layout title="Journal - honestly, harshita" description="thoughts, stories, and the things i'm learning">
-  <section class="min-h-screen py-10 bg-cream-50">
+  <section class="min-h-screen py-20 bg-cream-50">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-6">
+      <div class="text-center mb-10">
         <h1 class="font-serif text-4xl md:text-6xl font-bold text-navy-800 mb-6">
           My Journal
         </h1>
@@ -27,9 +27,9 @@ import { blogPosts, categories } from '../../data/blogData';
                 {category.name}
                 <span class="ml-1 opacity-60">({category.count})</span>
               </button>
-              <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-56 px-3 py-2 bg-navy-800 text-cream-50 text-xs font-body rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10 text-center leading-relaxed">
+              <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 px-3 py-2 bg-navy-800 text-cream-50 text-xs font-body rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10 text-center leading-relaxed">
                 {category.description}
-                <div class="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-navy-800"></div>
+                <div class="absolute bottom-full left-1/2 -translate-x-1/2 border-4 border-transparent border-b-navy-800"></div>
               </div>
             </div>
           ))}
